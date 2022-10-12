@@ -24,7 +24,7 @@ cd ~/Downloads
 
 _**Note:** Run the command for the first time and complete 100% Downloads_
 ```
-wget --continue https://dlcdn.apache.org/pig/pig-0.17.0/
+wget --continue https://dlcdn.apache.org/pig/pig-0.17.0/pig-0.17.0-src.tar.gz
 
 ```
 _Result: Successfull Downloads_
