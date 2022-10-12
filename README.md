@@ -39,9 +39,9 @@ ls -l pig-0.17.0-src.tar.gz
 tar -xvzf pig-0.17.0-src.tar.gz
 ```
 ```
-mv pig-0.17.0-src.tar.gz ../
+mv pig-0.17.0-src.tar.gz ~/
+cd
 mv pig-0.17.0-src pig
-
 ```
 
 _Result_
