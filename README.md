@@ -74,35 +74,19 @@ _Result_
 source ~/.bashrc
 ```
 
-
 **Note:** _Start a New Terminal_
 ```
-cd $HIVE_HOME
-bin/beeline -n hadoop -u jdbc:hive2://localhost:10000
+pig
 ```
 _Result_
-![image](https://user-images.githubusercontent.com/111234771/195278928-709db835-214f-4def-88ef-41a44201f4b3.png)
-
-```
-show databases;
-```
-_Result_
-![image](https://user-images.githubusercontent.com/111234771/195280370-b049018f-1957-4b36-8850-b15ca3b53b20.png)
-
-
-**Note:** _Start a New Terminal_
-```
-hive
-```
-_Result_
-![image](https://user-images.githubusercontent.com/111234771/195281072-ab2eb396-e416-4340-a8aa-23900f950fcb.png)
+![image](https://user-images.githubusercontent.com/111234771/195464574-73ecfc25-9fc6-4cc0-80e4-fb89779f4dbe.png)
 
 
 # Congratulation..... Hive Sucessfully Installed...#
 
-# Uninstall Hive #
+# Uninstall PIG #
 ```
-sudo rm -R /usr/local/apache-hive-3.1.3-bin
+sudo rm -R ~/pi
 ```
 
 ### Remove the content from ~/.bashrc ###
@@ -110,42 +94,6 @@ sudo rm -R /usr/local/apache-hive-3.1.3-bin
 sudo nano ~/.bashrc
 ```
 ```
-export HIVE_HOME=/usr/local/apache-hive-3.1.3-bin
-export PATH=$PATH:$HIVE_HOME/bin
+export PIG_HOME=/home/hadoop/PIG
+export PATH=$PATH:$PIG_HOME/bin
 ```
-
-### Remove the Directories ###
-```
-hdfs dfs -rm -R /tmp
-hdfs dfs -rm -R /user/hive/warehouse
-```
-
-
-# Troubleshooting #
-### TS-001 - SLF4J: Class path contains multiple SLF4J bindings ###
-
-![image](https://user-images.githubusercontent.com/111234771/195240546-9ed7fc72-cd1e-47c6-9a64-8ec1c8deae46.png)
-
-**Problem Statement:** _Same kind of Class Function are available in Two difference places with difference versions_
-
-**Solution:** _We are going delete one file from New locaition and copy ands replace the other file from old location to new location, that means we will have same file in both places_
-
-### Locate the Files ###
-```
-ls $HIVE_HOME/lib/guava*
-ls $HADOOP_HOME/share/hadoop/hdfs/lib/guava*
-```
-_Result_
- ![image](https://user-images.githubusercontent.com/111234771/195242097-0af7ded1-bec2-47e3-b94b-6366061585c7.png) 
-
-### Remove and Replace the file ###
-```
-sudo rm -f $HIVE_HOME/lib/guava-27.0-jre.jar
-```
-```
-sudo cp $HADOOP_HOME/share/hadoop/hdfs/lib/guava-27.0-jre.jar $HIVE_HOME/lib/
-```
-
-
-## Continue from Step-7 - Initiate Derby Database ##
-
